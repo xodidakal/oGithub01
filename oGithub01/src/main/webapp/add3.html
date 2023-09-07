@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if(!frm.num.value){ // 
+			alert("숫자를 입력하세요");
+			frm.num.focus();
+			return false;
+		}
+		if(isNaN(frm.num.value)){
+			alert("숫자가 아닙니다.");
+			frm.num.focus();
+			frm.num.value=""; // 입력된 글자 지우기
+			return false;
+		}
+		
+		return true;
+	}
+	
+</script>
+</head>
+<body>
+	<h1>숫자를 입력하세요</h1>
+	<form action="Add3" name="frm" method="post" onsubmit="return chk()"> <!-- method를 별도로 지정하지 않으면 디폴드는 get방식 -->
+		숫자 : <input type="text" name="num"> <p> <!-- value="5"를 넣으면 초기값을 설정할 수 있음 -->
+		위치 : <input type="text" name="loc"> <p>
+			 <input type="submit" value="확인">
+	</form>
+</body>
+</html>
